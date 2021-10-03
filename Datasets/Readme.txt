@@ -87,8 +87,6 @@ Both hour.csv and day.csv have the following fields, except hr which is not avai
 	
 	- instant: record index
 	نمایه رکود
-	- dteday : date
-	تاریخ 	
 	- season : season (1:springer, 2:summer, 3:fall, 4:winter)
 	فصل : (1: بهار، 2: تابستان، 3: پاییز، 4: زمستان)
 	- yr : year (0: 2011, 1:2012)
