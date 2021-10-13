@@ -28,21 +28,22 @@ normalizedcasualArray = np.divide(casualArray, max(casualArray))
 normalizedregisteredArray = np.divide(registeredArray, max(registeredArray))
 normalizedcntArray = np.divide(cntArray, max(cntArray))
 
-normalizedata = pd.DataFrame({'season':normalizedseasonArray,'yr':yrArray,'mnth':normalizedmnthArray,
-                              'holiday':holidayArray,'weekday':normalizedweekdayArray,'workingday':workingdayArray,
-                              'weathersit':normalizedweathersitArray,'temp':tempArray,'atemp':atempArray,
-                              'windspeed':windspeedArray,'hum':humArray,'casual':normalizedcasualArray,
-                              'registered':normalizedregisteredArray,'cnt':normalizedcntArray})
+normalizedata = pd.DataFrame({'season': normalizedseasonArray, 'yr': yrArray, 'mnth': normalizedmnthArray,
+                              'holiday': holidayArray, 'weekday': normalizedweekdayArray, 'workingday': workingdayArray,
+                              'weathersit': normalizedweathersitArray, 'temp': tempArray, 'atemp': atempArray,
+                              'windspeed': windspeedArray, 'hum': humArray, 'casual': normalizedcasualArray,
+                              'registered': normalizedregisteredArray, 'cnt': normalizedcntArray})
+# Calculate Correlation
+# for x in np.arange(0, 14):
+#     for y in np.arange(0, 14):
+#         print("Correlation between {} and {} : \n {}".format(normalizedata.columns[x], normalizedata.columns[y],
+#                                                              np.corrcoef(normalizedata.iloc[:, x].to_numpy(),
+#                                                                          normalizedata.iloc[:, y].to_numpy())))
 
 # Pair plots
 # sb.set_style('darkgrid')
-# sb.pairplot(normalizedata.iloc[:,8:13])
+# sb.pairplot(normalizedata.iloc[:,11:14])
 # plt.show()
-
-
-# Strip plots
-
-
 
 
 # Reg plots
@@ -108,7 +109,7 @@ normalizedata = pd.DataFrame({'season':normalizedseasonArray,'yr':yrArray,'mnth'
 # plt.ylabel('Count of Total Rental')
 #
 # plotreg13 = plt.figure(13)
-# sb.regplot(x=normalizedregisteredArray, y=normalizedcntArray, color='gray')
+# sb.regplot(x=normalizedregisteredArray, y=normalizedcntArray,  scatter_kws={"color": "black"}, line_kws={"color": "red"})
 # plt.xlabel('Number of Registered')
 # plt.ylabel('Count of Total Rental')
 # plt.show()
