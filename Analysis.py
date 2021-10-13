@@ -34,11 +34,11 @@ normalizedata = pd.DataFrame({'season': normalizedseasonArray, 'yr': yrArray, 'm
                               'windspeed': windspeedArray, 'hum': humArray, 'casual': normalizedcasualArray,
                               'registered': normalizedregisteredArray, 'cnt': normalizedcntArray})
 # Calculate Correlation
-# for x in np.arange(0, 14):
-#     for y in np.arange(0, 14):
-#         print("Correlation between {} and {} : \n {}".format(normalizedata.columns[x], normalizedata.columns[y],
-#                                                              np.corrcoef(normalizedata.iloc[:, x].to_numpy(),
-#                                                                          normalizedata.iloc[:, y].to_numpy())))
+for x in np.arange(0, 14):
+    for y in np.arange(0, 14):
+        print("Correlation between {} and {} : \n {}".format(normalizedata.columns[x], normalizedata.columns[y],
+                                                             np.corrcoef(normalizedata.iloc[:, x].to_numpy(),
+                                                                         normalizedata.iloc[:, y].to_numpy())))
 
 # Pair plots
 # sb.set_style('darkgrid')
